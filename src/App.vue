@@ -18,6 +18,7 @@
       </div>
     </vue-scratchable>
     <p>You scratched {{ percentage }}% free.</p>
+    <pre>Photo by <a href="https://unsplash.com/@tkirkgoz?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Mehmet Turgut Kirkgoz</a> on <a href="https://unsplash.com/t/animals?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></pre>
   </div>
 </template>
 
@@ -83,5 +84,9 @@ body {
 h3 {
   color: #2c3e50;
   text-align: center;
+}
+
+a {
+  color: #2196f3;
 }
 </style>
