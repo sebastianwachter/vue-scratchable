@@ -1,10 +1,10 @@
-# vue-scratchable
+# 🦄 vue-scratchable 🏳️‍🌈🧽
 
 A Vue.js wrapper component that turns everything into fun scratch cards. Includes touch support without additional dependencies.
 
 It can also calculate percentage value of the scratchables's cleared area.
 
-## Installation
+## 🎉 Installation
 
 Install it with npm:
 
@@ -18,7 +18,7 @@ Or directly in the browser:
 <script src="https://unpkg.com/vue-scratchable@latest/dist/vue-scratchable.umd.min.js"></script>
 ```
 
-## Usage
+## ✨ Usage
 
 Register the component globally:
 
@@ -50,15 +50,15 @@ In both cases you are now able to use it in the `<template>` of a component:
 </vue-scratchable>
 ```
 
-## Configuration
+## ⚙️ Configuration
 
-### Slot
+### 🎰 Slot
 
 | Slot name | Description |
 |-----------|-------------|
 | default | The content to be scratched free. |
 
-### Prop Types
+### 💡 Props
 
 | Property | Type | Description |
 |----------|------|-------------|
@@ -67,18 +67,18 @@ In both cases you are now able to use it in the `<template>` of a component:
 | getPercentageCleared | Boolean | Flag to enable the `percentageUpdate` event which emits the amount of cleared paint as percentage. |
 | percentageStride | Number | A stride used while calculating the cleared percentage to reduce calculation time. |
 
-#### Brush options
+#### 🖊️ Brush options
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
 | size | Number | 20 | Defines the [`lineWidth` attribute.](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineWidth) |
 | shape | String | round | Defines the [`lineJoin` attribute.](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin) |
 
-#### Hide options
+#### 🙈 Hide options
 
 There are two different types of fill that can be applied to the scratchable area: a solid colour or a [canvas pattern](https://developer.mozilla.org/en-US/docs/Web/API/CanvasPattern). These are differentiated by the `type` property:
 
-##### Solid colour
+##### 🟩 Solid colour
 
 | Property | Type | Description |
 |----------|------|-------------|
@@ -94,7 +94,7 @@ const hide = {
 };
 ```
 
-##### Pattern
+##### 🏳️‍🌈 Pattern
 
 | Property | Type | Description |
 |----------|------|-------------|
@@ -112,13 +112,13 @@ const hide = {
 };
 ```
 
-### Events
+### 🎈 Events
 
 | Event name | Parameter type | Description |
 |------------|----------------|-------------|
 | percentageUpdate | Number | If the `getPercentageCleared` flag is set the component will emit this event and pass a number calculated from the percentage amount of the cleared area. |
 
-## Caveats
+## ✔️ Caveats
 
 1. Img tags with local assets
 
@@ -149,5 +149,5 @@ The cleared area percentage calculation has to take every pixel of the canvas in
 
 That's also why the `percentageStride` property should be set wisely and adjusted to your needs. It defines how many pixels should be skipped while calculating. This obviously also decreases the percentage's value accuracy.
 
-## License
+## 🧾 License
 MIT
