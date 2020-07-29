@@ -1,4 +1,4 @@
-name: Test, Publish, & Release
+name: Lint, Publish, & Release
 on: [push]
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
       - run: npm run lint
 
   publish:
-    needs: test
+    needs: lint
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
     steps:
@@ -33,7 +33,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   create-release:
-    needs: test
+    needs: lint
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
     steps:
