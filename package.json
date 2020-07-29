@@ -1,6 +1,6 @@
 {
   "name": "vue-scratchable",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A Vue.js wrapper component that turns everything into fun scratch cards.",
   "author": {
     "name": "Sebastian Wachter",
