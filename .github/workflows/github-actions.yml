@@ -8,7 +8,7 @@ jobs:
       matrix:
         node-version: [12.x, 14.x]
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
@@ -20,7 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
+        with:
+          ref: master
       - uses: actions/setup-node@v1
         with:
           node-version: 14
@@ -36,7 +38,9 @@ jobs:
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
+        with:
+          ref: master
       - uses: Roang-zero1/github-create-release-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
