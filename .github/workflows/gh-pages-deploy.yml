@@ -1,0 +1,24 @@
+name: Deploy to GitHub Pages
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+
+      - name: Build Pages
+        uses: actions/setup-node@v1
+          with:
+            node-version: 14
+        run: npm ci
+        run: npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
