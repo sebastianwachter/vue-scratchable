@@ -250,5 +250,10 @@ The cleared area percentage calculation has to take every pixel of the canvas in
 
 That's also why the `percentageStride` property should be set wisely and adjusted to your needs. It defines how many pixels should be skipped while calculating. This obviously also decreases the percentage's value accuracy.
 
+## 🛠️ Contribution
+
+If you find a bug or want to contribute to the code or documentation, you can help by submitting an [issue](https://github.com/sebastianwachter/vue-scratchable/issues) or a [pull request](https://github.com/sebastianwachter/vue-scratchable/pulls).
+
 ## 🧾 License
-MIT
+
+[MIT](http://opensource.org/licenses/MIT)
