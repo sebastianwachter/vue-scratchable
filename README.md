@@ -217,7 +217,7 @@ const hide = {
 
 | Event name | Parameter type | Description |
 |------------|----------------|-------------|
-| percentageUpdate | Number | If the `getPercentageCleared` flag is set the component will emit this event and pass a number calculated from the percentage amount of the cleared area. |
+| percentage-update | Number | If the `getPercentageCleared` flag is set the component will emit this event and pass a number calculated from the percentage amount of the cleared area. |
 
 ## ✔️ Caveats
 
