@@ -231,7 +231,7 @@ export default {
       for (let i = clearedCount; i < length; i += this.percentageStride) {
         if (parseInt(data[i], 10) === 0) clearedCount += 1;
       }
-      this.$emit('percentageUpdate', Math.round((clearedCount / total) * 100));
+      this.$emit('percentage-update', Math.round((clearedCount / total) * 100));
     },
   },
 };

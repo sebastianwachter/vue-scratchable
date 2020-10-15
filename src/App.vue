@@ -7,7 +7,7 @@
       :brushOptions="brush"
       :hideOptions="hide"
       getPercentageCleared
-      @percentageUpdate="updatePoints"
+      @percentage-update="updatePoints"
     >
       <div class="wrapper">
         <img
