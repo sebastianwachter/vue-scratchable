@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.3.1
+
+#### Chore:
+
+- Readme update.
+
+---
+
 ## v0.3.0
 
 #### 🔥 BREAKING:
