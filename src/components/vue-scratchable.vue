@@ -56,6 +56,7 @@ export default {
       },
       observer: null,
       slotDomElement: null,
+      initFlag: false,
     };
   },
   mounted() {
@@ -63,11 +64,12 @@ export default {
     const { context } = this.$scopedSlots.default()[0];
     // eslint-disable-next-line no-underscore-dangle
     this.slotDomElement = context.$children.find((vnode) => vnode._uid === this._uid).$el;
+    const debounceInit = debounce(() => this.init(), 200);
 
     this.observer = new MutationObserver((mutations) => {
-      mutations.forEach(({ attributeName }) => {
-        if (attributeName === 'style') return;
-        debounce(this.init, 500);
+      mutations.forEach(() => {
+        if (this.initFlag) return;
+        debounceInit();
       });
     });
     this.observer.observe(this.slotDomElement, {
@@ -96,6 +98,7 @@ export default {
   },
   methods: {
     init() {
+      this.initFlag = true;
       this.setCanvasSizeAndContext();
       this.$nextTick(() => this.fillArea());
     },
@@ -126,6 +129,7 @@ export default {
           `);
         });
       this.context.fillRect(0, 0, width, height);
+      this.initFlag = false;
     },
 
     setFillStyle() {
