@@ -63,8 +63,8 @@ export default {
     const debounceInit = debounce(() => this.init(), 200);
 
     this.observer = new MutationObserver((mutations) => {
-      mutations.forEach(() => {
-        if (this.initFlag) return;
+      mutations.forEach(({ attributeName }) => {
+        if (this.initFlag || !attributeName) return;
         debounceInit();
       });
     });
