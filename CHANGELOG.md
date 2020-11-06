@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.3.2
+
+#### Bugfix:
+
+- Fix the MutationObserver with the debounce script (this actually did never work in this state).
+
+#### Cleanup:
+
+- Replace `slotDomElement` with Vue's `$el`.
+
+#### Chore: 
+
+- Update packages (all packages with a dependency to `eslint` are currently breaking its package resolution in newer node and npm versions).
+
+---
+
 ## v0.3.1
 
 #### Chore:
