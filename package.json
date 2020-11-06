@@ -34,15 +34,15 @@
     "vue": "^2.6.12"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.5.7",
+    "@vue/cli-plugin-babel": "^4.5.8",
     "@vue/cli-plugin-eslint": "^4.5.7",
-    "@vue/cli-service": "^4.5.7",
+    "@vue/cli-service": "^4.5.8",
     "@vue/eslint-config-airbnb": "^5.0.2",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.11.0",
+    "eslint": "^7.12.1",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-vue": "^7.0.1",
-    "lint-staged": "^10.4.0",
+    "eslint-plugin-vue": "^7.1.0",
+    "lint-staged": "^10.5.1",
     "rimraf": "^3.0.2",
     "vue-template-compiler": "^2.6.12"
   },
