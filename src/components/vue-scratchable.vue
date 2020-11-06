@@ -55,15 +55,11 @@ export default {
         lastY: 0,
       },
       observer: null,
-      slotDomElement: null,
       initFlag: false,
     };
   },
   mounted() {
     this.canvas = this.$el.querySelector('canvas');
-    const { context } = this.$scopedSlots.default()[0];
-    // eslint-disable-next-line no-underscore-dangle
-    this.slotDomElement = context.$children.find((vnode) => vnode._uid === this._uid).$el;
     const debounceInit = debounce(() => this.init(), 200);
 
     this.observer = new MutationObserver((mutations) => {
@@ -72,7 +68,7 @@ export default {
         debounceInit();
       });
     });
-    this.observer.observe(this.slotDomElement, {
+    this.observer.observe(this.$el, {
       childList: true,
       attributes: true,
       characterData: true,
@@ -105,7 +101,7 @@ export default {
 
     setCanvasSizeAndContext() {
       this.$nextTick(() => {
-        const { width, height } = this.slotDomElement.getBoundingClientRect();
+        const { width, height } = this.$el.getBoundingClientRect();
         this.canvas.width = Math.ceil(width);
         this.canvas.height = Math.ceil(height);
         this.context = this.canvas.getContext('2d');
