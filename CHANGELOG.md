@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.3.3
+
+#### Chore:
+
+- Update packages.
+
 ## v0.3.2
 
 #### Bugfix:
