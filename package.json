@@ -27,7 +27,7 @@
     "build": "vue-cli-service build --dest docs",
     "build-bundle": "vue-cli-service build --target lib --name vue-scratchable ./src/components/vue-scratchable.vue && rimraf ./dist/demo.html",
     "lint": "vue-cli-service lint",
-    "prepare": "npm run build"
+    "prepare": "npm run build-bundle"
   },
   "dependencies": {
     "core-js": "^3.6.5",
