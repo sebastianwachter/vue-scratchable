@@ -63,10 +63,10 @@ This code is taken from this project's `App.vue` file to showcase the component'
     <h2>Scratch them free!</h2>
     <vue-scratchable
       v-slot="{ init }"
-      :brushOptions="brush"
-      :hideOptions="hide"
-      getPercentageCleared
-      @percentageUpdate="updatePoints"
+      :brush-options="brush"
+      :hide-options="hide"
+      get-percentage-cleared
+      @percentage-update="updatePoints"
     >
       <div class="wrapper">
         <img
@@ -163,10 +163,10 @@ a {
 
 | Property | Type | Description |
 |----------|------|-------------|
-| brushOptions | Object | Configuration object of the "scratcher". See below for possible options. |
-| hideOptions | Object | Configuration object of the scratchable layer. See below for possible options. |
-| getPercentageCleared | Boolean | Flag to enable the `percentageUpdate` event which emits the amount of cleared paint as percentage. |
-| percentageStride | Number | A stride used while calculating the cleared percentage to reduce calculation time. |
+| brush-options | Object | Configuration object of the "scratcher". See below for possible options. |
+| hide-options | Object | Configuration object of the scratchable layer. See below for possible options. |
+| get-percentage-cleared | Boolean | Flag to enable the `percentage-update` event which emits the amount of cleared paint as percentage. |
+| percentage-stride | Number | A stride used while calculating the cleared percentage to reduce calculation time. |
 
 #### 🖊️ Brush options
 
@@ -213,11 +213,18 @@ const hide = {
 };
 ```
 
+###### Dealing with external images
+Be aware that if you will be referencing an external image in `src`, you should guarantee the remote source does respond with an `Access-Control-Allow-Origin` Header being equal to one of the following:
+- to the value of the Request Header `Origin` - automatically set by the browser, being the base url of your website
+- to the value `*` - allowing any client-side application to request your image as well
+
+Failing to do this will show CORS-related issues in the console of your application.
+
 ### 🎈 Events
 
 | Event name | Parameter type | Description |
 |------------|----------------|-------------|
-| percentage-update | Number | If the `getPercentageCleared` flag is set the component will emit this event and pass a number calculated from the percentage amount of the cleared area. |
+| percentage-update | Number | If the `get-percentage-cleared` flag is set the component will emit this event and pass a number calculated from the percentage amount of the cleared area. |
 
 ## ✔️ Caveats
 
@@ -236,19 +243,11 @@ Example:
 </vue-scratchable>
 ```
 
-2. Using external images with patterns won't calculate percentage values.
-
-Patterns from external sources can't be used together with the percentage calculation. If done anyways it will resolve in the following CORS error:
-
-```
-Error in v-on handler: "SecurityError: Failed to execute 'getImageData' on 'CanvasRenderingContext2D': The canvas has been tainted by cross-origin data."
-```
-
-3. Percentage calculation is very taxing on performance
+2. Percentage calculation is very taxing on performance
 
 The cleared area percentage calculation has to take every pixel of the canvas into consideration and analyzes whether they are cleared or not. Since this calculation gets called on every draw step this needs a lot of processing power. Because of that this feature is disabled by default and needs to be explicitly activated.
 
-That's also why the `percentageStride` property should be set wisely and adjusted to your needs. It defines how many pixels should be skipped while calculating. This obviously also decreases the percentage's value accuracy.
+That's also why the `percentage-stride` property should be set wisely and adjusted to your needs. It defines how many pixels should be skipped while calculating. This obviously also decreases the percentage's value accuracy.
 
 ## 🛠️ Contribution
 
