@@ -147,7 +147,10 @@ export default {
           resolve(img);
         };
         img.onerror = (err) => reject(err);
-        img.src = src;
+
+        // Allow remote image fetching while manipulating canvas: https://stackoverflow.com/a/33135803/1044644
+        img.src = src + '?' + new Date().getTime();
+        img.setAttribute('crossOrigin', '');
       });
     },
 
