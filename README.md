@@ -1,5 +1,7 @@
 # 🦄 vue-scratchable 🏳️‍🌈🧽
 
+## DEPRECATED: Use the native web component instead: https://github.com/sebastianwachter/wc-scratch
+
 Publishing status: ![Publishing status](https://github.com/sebastianwachter/vue-scratchable/workflows/Lint%2C%20Publish%2C%20%26%20Release/badge.svg)
 
 A Vue.js wrapper component that turns everything into fun scratch cards. Includes touch support without additional dependencies.
